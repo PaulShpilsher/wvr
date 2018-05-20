@@ -1,0 +1,62 @@
+{
+  "name": "wvr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulShpilsher/wvr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PaulShpilsher/wvr/issues"
+  },
+  "scripts": {
+    "build": "npm run clean-dist && webpack -p --config=./config/webpack/prod.js",
+    "clean-dist": "rm -f -r -d ./dist",
+    "lint": "npm run lint:ts && npm run lint:sass",
+    "lint:ts": "tslint './src/**/*.ts*' --format stylish --force",
+    "lint:sass": "stylelint ./src/**/*.scss",
+    "start": "npm run start-dev",
+    "start-dev": "webpack-dev-server --config=./config/webpack/dev.js",
+    "start-prod": "npm run build && node express.js"
+  },
+  "homepage": "https://github.com/PaulShpilsher/wvr#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.2.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "react-hot-loader": "^4.2.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "@types/node": "^10.1.2",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "postcss": {}
+}
